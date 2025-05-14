@@ -1,0 +1,15 @@
+.secao_banner {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../public/banner-home.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-color: rgb(249, 219, 121);
+}
+
+/* Restante do CSS permanece igual ao original */
