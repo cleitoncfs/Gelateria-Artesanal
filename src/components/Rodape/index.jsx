@@ -1,5 +1,6 @@
+import { FaExternalLinkAlt } from "react-icons/fa";
 import estilos from "./Rodape.module.css";
-import Logo from "/logo.png"; // Caminho simplificado
+import Logo from "/logo.png"; // Mantendo o caminho original que já funcionava
 
 export default function Rodape() {
     return (
@@ -24,8 +25,20 @@ export default function Rodape() {
             </div>
             <div className={estilos.container_direito_autoral}>
                 <p>
-                    Gelateria. Orgulhosamente desenvolvido por &quot;Cleiton
-                    Santos&quot;
+                    © {new Date().getFullYear()} Gelateria Artesanal - Todos os
+                    direitos reservados
+                </p>
+                <p>
+                    Desenvolvido por{" "}
+                    <a
+                        href="https://portfolio-cleiton.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={estilos.link_externo}
+                    >
+                        Cleiton Santos{" "}
+                        <FaExternalLinkAlt className={estilos.icone} />
+                    </a>
                 </p>
             </div>
         </footer>

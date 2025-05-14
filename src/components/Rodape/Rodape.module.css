@@ -3,7 +3,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
+    background-color: #000;
+    color: #fff;
+    padding-top: 20px;
 }
 
 .container_informacoes {
@@ -11,8 +13,7 @@
     max-width: 1024px;
     display: flex;
     align-items: center;
-    color: white;
-    padding: 100px 20px;
+    padding: 40px 20px;
     justify-content: space-between;
 }
 
@@ -23,26 +24,45 @@
 
 .container_informacoes div {
     width: 20%;
-    height: 100px;
 }
 
 .container_direito_autoral {
     width: 100%;
-    color: white;
     text-align: center;
     padding: 20px;
+    border-top: 1px solid #333;
+}
+
+.link_externo {
+    color: #ff6b6b;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icone {
+    font-size: 12px;
+}
+
+.container_informacoes p {
+    transition: transform 0.2s;
+}
+
+.container_informacoes p:hover {
+    transform: translateX(5px);
+    color: var(--primary);
 }
 
 @media (max-width: 768px) {
     .container_informacoes {
         flex-direction: column;
-        padding: 80px 0;
+        padding: 30px 0;
         gap: 30px;
     }
 
     .container_informacoes div {
         width: 100%;
-        height: auto;
         text-align: center;
     }
 }

@@ -1,50 +1,135 @@
 .topo_container {
     width: 100%;
-    padding: 0px 20px;
+    padding: 0 1rem;
     display: flex;
     justify-content: center;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 10;
     background-color: rgb(249, 219, 121);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .topo_container div {
     width: 100%;
-    max-width: 1024px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
 }
 
 .img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.topo_container nav {
-    padding: 20px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+.img:hover {
+    transform: scale(1.05);
 }
 
 .link_topo {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: black;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s;
 }
 
+.link_topo:hover {
+    color: #8b5e3c;
+    transform: scale(1.05);
+}
+
+.menu_botao {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hamburguer {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Estado ABERTO – vira um X */
+.menu_botao.aberto span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.menu_botao.aberto span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu_botao.aberto span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+.navegacao {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.menu_ativo {
+    display: flex;
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
+    .navegacao {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ccc;
+        background-color: rgb(249, 219, 121);
+    }
+
+    .menu_ativo {
+        display: flex;
+    }
+
+    .menu_botao {
+        display: flex;
+    }
     .topo_container div {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .topo_container nav {
-        border-top: 1px solid grey;
         width: 100%;
-        justify-content: space-around;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ccc;
+    }
+
+    .menu_botao {
+        display: flex;
+    }
+
+    .img {
+        margin-bottom: 0.5rem;
+    }
+    .menu_ativo {
+        display: flex !important;
     }
 }

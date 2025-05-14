@@ -10,11 +10,13 @@ export default function App() {
     return (
         <Router>
             <Topo />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/sabores" element={<Sabores />} />
-                <Route path="/sobre" element={<Sobre />} />
-            </Routes>
+            <main className="conteudo-principal">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/sabores" element={<Sabores />} />
+                    <Route path="/sobre" element={<Sobre />} />
+                </Routes>
+            </main>
             <Rodape />
         </Router>
     );

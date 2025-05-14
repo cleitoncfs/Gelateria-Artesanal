@@ -1,25 +1,31 @@
 import estilos from "./Home.module.css";
-import image1 from "../../public/banner-sabores.jpg";
-import image2 from "../../public/eventos-image.jpg";
-import image3 from "../../public/sobre-image.jpg";
+import image1 from "../assets/banner-sabores.jpg";
+import image2 from "../assets/eventos-image.jpg";
+import image3 from "../assets/sobre-image.jpg";
 
 export default function Home() {
     return (
-        <main>
-            <section className={estilos.secao_banner}>
+        <main className="conteudo-principal">
+            <section
+                className={estilos.secao_banner}
+                aria-labelledby="titulo-banner"
+            >
                 <div className={estilos.texto_banner}>
-                    <h1>SORVETE ARTESANAL</h1>
+                    <h1 id="titulo-banner">SORVETE ARTESANAL</h1>
                 </div>
             </section>
 
-            <section className={estilos.secao_nossos_sabores}>
+            <section
+                className={estilos.secao_nossos_sabores}
+                aria-labelledby="titulo-sabores"
+            >
                 <img
                     className={estilos.img_card}
                     src={image1}
-                    alt="sorvetes diversos"
+                    alt="Variedade de sorvetes artesanais em potes coloridos"
                 />
                 <div className={estilos.container_texto}>
-                    <h2>NOSSOS SABORES</h2>
+                    <h2 id="titulo-sabores">NOSSOS SABORES</h2>
                     <span>Novos e deliciosos!</span>
                     <p>
                         Sorvete bom é aquele feito com os melhores ingredientes!
@@ -32,32 +38,38 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className={estilos.secao_nossos_eventos}>
+            <section
+                className={estilos.secao_nossos_eventos}
+                aria-labelledby="titulo-eventos"
+            >
                 <div className={estilos.container_texto}>
-                    <h2>NOSSOS EVENTOS</h2>
-                    <span>Delicias com sorvete!</span>
+                    <h2 id="titulo-eventos">NOSSOS EVENTOS</h2>
+                    <span>Delícias com sorvete!</span>
                     <p>
                         Mais do que uma sorveteria, uma extensão da sua casa!
                         Estamos aqui prontinhos para te atender e oferecer os
-                        melhores eventos com os melhores sorvete da sua vida!
-                        Venha nos conhecer e passar um tempo aqui com a gente.
+                        melhores eventos com os melhores sorvetes da sua vida!
+                        Venha nos conhecer e passar um tempo com a gente.
                     </p>
                 </div>
                 <img
                     className={estilos.img_card}
                     src={image2}
-                    alt="mesa de festa"
+                    alt="Mesa decorada com sorvetes e doces para eventos"
                 />
             </section>
 
-            <section className={estilos.secao_sobre_nos}>
+            <section
+                className={estilos.secao_sobre_nos}
+                aria-labelledby="titulo-sobre"
+            >
                 <img
                     className={estilos.img_card}
                     src={image3}
-                    alt="pessoas comendo sorvete"
+                    alt="Família feliz comendo sorvete artesanal"
                 />
                 <div className={estilos.container_texto}>
-                    <h2>SOBRE NÓS</h2>
+                    <h2 id="titulo-sobre">SOBRE NÓS</h2>
                     <span>Alegria em cada casquinha!</span>
                     <p>
                         Venha tomar o melhor sorvete da região aqui com a gente!
