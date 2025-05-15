@@ -1,57 +1,37 @@
 import estilos from "./sobre.module.css";
 
-// Importe as imagens diretamente de public/
 import image1 from "/sobre-image.jpg";
 import image2 from "/sorveteria.jpg";
 
 export default function Sobre() {
     return (
         <main className={estilos.container_principal}>
-            <section className={estilos.secao_banner_sobre}>
-                <div>
-                    <h1>A GELATERIA</h1>
-                </div>
+            <section className={estilos.banner}>
+                <h1>A GELATERIA</h1>
             </section>
 
-            <section className={estilos.secao_sobre_nos}>
-                <div>
+            <section className={estilos.sobre_conteudo}>
+                <div className={estilos.texto}>
                     <h2>Sobre Nós</h2>
                     <span>Nós simplesmente amamos sorvete!</span>
                     <p>
-                        Somos uma empresa apaixonada pelo que faz. Colocamos
-                        amor em cada sorvete produzido. Fazemos o melhor sorvete
-                        para os nossos clientes e gostamos de receber elogios.
-                        Estamos operando desde 2009 com as melhores
-                        matérias-primas para a produção final do sorvete.
-                        Vendemos tanto para varejo como para atacado.
+                        Somos apaixonados pelo que fazemos. Colocamos amor em
+                        cada sorvete produzido, buscando sempre oferecer o
+                        melhor para nossos clientes.
                     </p>
                     <p>
-                        Nossos clientes podem comprar os nossos sorvetes e
-                        degustar na nossa loja ou levar para sua residência e
-                        aproveitar junto com a família. Também vendemos para
-                        estabelecimentos e criamos eventos como festa de
-                        aniversário, formaturas e eventos empresariais. Para
-                        contratar os nossos serviços, basta entrar em contato
-                        conosco. Iremos proporcionar o melhor atendimento e os
-                        melhores produtos para você fazer a sua festa mais
-                        saborosa, com o melhor sorvete da cidade.
+                        Desde 2009, trabalhamos com as melhores matérias-primas,
+                        atendendo tanto o varejo quanto o atacado. Você pode
+                        saborear nossos sorvetes na loja ou levá-los para casa.
+                        Também realizamos eventos como aniversários, formaturas
+                        e festas corporativas.
                     </p>
                 </div>
             </section>
 
-            <section className={estilos.secao_imagens}>
-                <div>
-                    <img
-                        className={estilos.img}
-                        src={image1}
-                        alt="pessoas comendo sorvete"
-                    />
-                    <img
-                        className={estilos.img}
-                        src={image2}
-                        alt="loja sorveteria"
-                    />
-                </div>
+            <section className={estilos.imagens}>
+                <img src={image1} alt="Pessoas comendo sorvete" />
+                <img src={image2} alt="Loja da sorveteria" />
             </section>
         </main>
     );

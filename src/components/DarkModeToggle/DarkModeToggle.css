@@ -1,0 +1,55 @@
+.dark-mode-toggle {
+    --toggle-size: 24px;
+    --toggle-padding: 2px;
+    --toggle-thumb-size: calc(var(--toggle-size) - var(--toggle-padding) * 2);
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+.toggle-track {
+    width: calc(var(--toggle-size) * 2);
+    height: var(--toggle-size);
+    border-radius: 100px;
+    position: relative;
+    transition: var(--transition-default);
+    background: var(--toggle-track-bg);
+    box-shadow: var(--toggle-shadow);
+}
+
+.toggle-thumb {
+    width: var(--toggle-thumb-size);
+    height: var(--toggle-thumb-size);
+    border-radius: 50%;
+    position: absolute;
+    left: var(--toggle-padding);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--transition-default);
+    background: var(--toggle-thumb-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--toggle-shadow);
+}
+
+.dark .toggle-thumb {
+    left: calc(100% - var(--toggle-thumb-size) - var(--toggle-padding));
+}
+
+.icon {
+    width: 60%;
+    height: 60%;
+    transition: var(--transition-default);
+}
+
+.sun {
+    color: var(--toggle-sun-color);
+}
+
+.moon {
+    color: var(--toggle-moon-color);
+}

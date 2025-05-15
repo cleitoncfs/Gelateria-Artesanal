@@ -1,104 +1,134 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
+/* Reset e estilos base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
+:root {
+    /* Cores base - tema claro */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --accent-color: #ffe66d;
+
+    /* Cores do toggle */
+    --toggle-track-bg: linear-gradient(to right, #f5f5f5, #e0e0e0);
+    --toggle-thumb-bg: #ffffff;
+    --toggle-sun-color: #ffb74d;
+    --toggle-moon-color: #90caf9;
+    --toggle-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    /* Tipografia */
+    --font-primary: "Poppins", sans-serif;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+
+    /* Espaçamentos */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* Bordas */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Transições */
+    --transition-default: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* Tema escuro */
+.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --primary-color: #ff8e8e;
+    --secondary-color: #5edfd7;
+    --accent-color: #ffee8d;
+    --toggle-track-bg: linear-gradient(to right, #3a3a3a, #2b2b2b);
+    --toggle-thumb-bg: #292f36;
+}
+
+/* Elementos base */
 body {
-    padding-top: 90px;
-    background-color: #fff;
-    color: #333;
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: var(--transition-default);
+    padding-top: 120px;
 }
 
-/* Container principal centralizado */
-.conteudo-principal {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-default);
 }
 
-/* Tipografia padrão */
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
 h1,
 h2,
 h3,
 h4 {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #222;
+    color: var(--text-color);
+    margin-bottom: var(--space-sm);
+    line-height: 1.2;
 }
 
-p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
+/* Classes utilitárias */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
 }
 
-/* Links */
-a {
-    color: inherit;
-    text-decoration: none;
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Estilos específicos que estavam no original */
+.secao_banner {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
 }
 
-/* ========= MEDIA QUERIES ========= */
-
-/* Telas médias (tablets, até 1024px) */
-@media (max-width: 1024px) {
-    .conteudo-principal {
-        padding: 1.5rem;
-    }
-
-    p {
-        font-size: 0.95rem;
-    }
+.texto_banner h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    color: white;
+    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Telas pequenas (celulares, até 768px) */
+/* Media Queries base */
 @media (max-width: 768px) {
+    :root {
+        --text-base: 0.9375rem;
+        --space-md: 0.75rem;
+    }
+
     body {
-        padding-top: 140px;
-    }
-
-    .conteudo-principal {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 1.75rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 0.9rem;
+        padding-top: 120px; /* Valor para mobile */
     }
 }
-
-/* Telas muito pequenas (até 480px) */
-@media (max-width: 480px) {
-    .conteudo-principal {
-        padding: 0.75rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.25rem;
-    }
-
-    p {
-        font-size: 0.85rem;
-    }
-}
-
-/* Estilos adicionais globais */

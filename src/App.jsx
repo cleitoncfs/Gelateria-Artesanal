@@ -1,3 +1,4 @@
+// App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Topo from "./components/Topo";
 import Rodape from "./components/Rodape";
